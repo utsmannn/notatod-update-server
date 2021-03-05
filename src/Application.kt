@@ -46,7 +46,11 @@ fun Application.module(testing: Boolean = false) {
         get("/version") {
             val macOs = mapOf(
                 "version_code" to 1,
-                "version_name" to "1.0.0-alpha"
+                "version_name" to "1.0.0-alpha",
+                "new_features" to listOf(
+                    "Fix enable Google Auth",
+                    "Fix local data"
+                )
             )
             call.respond(
                 mapOf(
