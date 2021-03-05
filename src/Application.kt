@@ -44,13 +44,17 @@ fun Application.module(testing: Boolean = false) {
         }
 
         get("/version") {
+            val changelog = listOf(
+                "Fix enable Google Auth",
+                "Fix local data"
+            )
             val macOs = mapOf(
                 "version_code" to 2,
                 "version_name" to "1.1.0-alpha",
-                "changelog" to listOf(
-                    "Fix enable Google Auth",
-                    "Fix local data"
-                )
+                "changelog" to changelog,
+                "changelog_string" to changelog.map { "- $it" }.toString().replace("[","")
+                    .replace("]", "")
+                    .replace(", ", "\n")
             )
             call.respond(
                 mapOf(
