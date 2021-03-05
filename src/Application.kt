@@ -44,10 +44,13 @@ fun Application.module(testing: Boolean = false) {
         }
 
         get("/version") {
+            val macOs = mapOf(
+                "version_code" to 1,
+                "version_name" to "1.0.0-alpha"
+            )
             call.respond(
                 mapOf(
-                    "version_code" to 1,
-                    "version_name" to "1.0.0-alpha"
+                    "macOS" to macOs
                 )
             )
         }
