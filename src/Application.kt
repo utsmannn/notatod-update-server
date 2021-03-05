@@ -54,7 +54,8 @@ fun Application.module(testing: Boolean = false) {
                 "changelog" to changelog,
                 "changelog_string" to changelog.map { "- $it" }.toString().replace("[","")
                     .replace("]", "")
-                    .replace(", ", "\n")
+                    .replace(", ", "\n"),
+                "download_page" to "https://github.com/utsmannn/notatod"
             )
             call.respond(
                 mapOf(
