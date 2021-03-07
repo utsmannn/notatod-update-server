@@ -67,7 +67,7 @@ fun Application.module(testing: Boolean = false) {
         get("/feature") {
             call.respond(
                 mapOf(
-                    "google_auth" to false
+                    "google_auth" to true
                 )
             )
         }
