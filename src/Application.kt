@@ -45,17 +45,18 @@ fun Application.module(testing: Boolean = false) {
 
         get("/version") {
             val changelog = listOf(
-                "Fix enable Google Auth",
-                "Fix local data"
+                "Add keyboard shortcut",
+                "Add window when app open",
+                "Add Google OAuth2 performance"
             )
             val macOs = mapOf(
-                "version_code" to 2,
+                "version_code" to 3,
                 "version_name" to "1.1.0-alpha",
                 "changelog" to changelog,
                 "changelog_string" to changelog.map { "- $it" }.toString().replace("[","")
                     .replace("]", "")
                     .replace(", ", "\n"),
-                "download_page" to "https://github.com/utsmannn/notatod"
+                "download_page" to "https://github.com/utsmannn/notatod/releases/tag/v1.1.0-alpha-3"
             )
             call.respond(
                 mapOf(
