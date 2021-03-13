@@ -72,6 +72,24 @@ fun Application.module(testing: Boolean = false) {
                 )
             )
         }
+
+        route("/v1") {
+            get("/feature") {
+                call.respond(
+                    mapOf(
+                        "cloud_service_enable" to CloudService.GOOGLE_DRIVE,
+                        "services" to mapOf(
+                            CloudService.GOOGLE_DRIVE to true,
+                            CloudService.DROPBOX to false
+                        )
+                    )
+                )
+            }
+        }
     }
+}
+
+enum class CloudService {
+    GOOGLE_DRIVE, DROPBOX, DISABLE
 }
 
