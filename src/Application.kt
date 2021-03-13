@@ -77,10 +77,10 @@ fun Application.module(testing: Boolean = false) {
             get("/feature") {
                 call.respond(
                     mapOf(
-                        "cloud_service_enable" to CloudService.GOOGLE_DRIVE,
+                        "cloud_service_enable" to CloudService.DROPBOX,
                         "services" to mapOf(
-                            CloudService.GOOGLE_DRIVE to true,
-                            CloudService.DROPBOX to false
+                            CloudService.GOOGLE_DRIVE to false,
+                            CloudService.DROPBOX to true
                         )
                     )
                 )
