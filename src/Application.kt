@@ -45,9 +45,9 @@ fun Application.module(testing: Boolean = false) {
 
         get("/version") {
             val changelog = listOf(
-                "Add keyboard shortcut",
-                "Add window when app open",
-                "Add Google OAuth2 performance"
+                "Add and enable Dropbox Integration",
+                "Add new route (/v1) for feature update api",
+                "Fix editor in High Sierra"
             )
             val macOs = mapOf(
                 "version_code" to 4,
@@ -56,7 +56,7 @@ fun Application.module(testing: Boolean = false) {
                 "changelog_string" to changelog.map { "- $it" }.toString().replace("[","")
                     .replace("]", "")
                     .replace(", ", "\n"),
-                "download_page" to "https://github.com/utsmannn/notatod/releases/tag/v1.1.0-alpha-3"
+                "download_page" to "https://github.com/utsmannn/notatod/releases/tag/v1.1.0-alpha-4"
             )
             call.respond(
                 mapOf(
