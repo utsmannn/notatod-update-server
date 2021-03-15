@@ -50,7 +50,7 @@ fun Application.module(testing: Boolean = false) {
                 "Add Google OAuth2 performance"
             )
             val macOs = mapOf(
-                "version_code" to 3,
+                "version_code" to 4,
                 "version_name" to "1.1.0-alpha",
                 "changelog" to changelog,
                 "changelog_string" to changelog.map { "- $it" }.toString().replace("[","")
@@ -68,7 +68,7 @@ fun Application.module(testing: Boolean = false) {
         get("/feature") {
             call.respond(
                 mapOf(
-                    "google_auth" to true
+                    "google_auth" to false
                 )
             )
         }
@@ -77,10 +77,10 @@ fun Application.module(testing: Boolean = false) {
             get("/feature") {
                 call.respond(
                     mapOf(
-                        "cloud_service_enable" to CloudService.GOOGLE_DRIVE,
+                        "cloud_service_enable" to CloudService.DROPBOX,
                         "services" to mapOf(
-                            CloudService.GOOGLE_DRIVE to true,
-                            CloudService.DROPBOX to false
+                            CloudService.GOOGLE_DRIVE to false,
+                            CloudService.DROPBOX to true
                         )
                     )
                 )
